@@ -1,0 +1,118 @@
+SECURITY TESTING REPORT
+
+Company: CODETECH IT SOLUTIONS
+Name: Garnepudi Renuka Rani
+Intern ID: CTIS55575
+Domain: SOFTWARE TESTING
+Duration: 4 WEEKS
+Mentor: NEELA SANTHOSH
+
+PROJECT TITLE:
+
+Web Application Security Testing
+
+DESCRIPTION:
+
+This project focuses on conducting manual security testing on a sample web application to identify common web vulnerabilities such as SQL Injection and Cross-Site Scripting (XSS).
+
+The testing was performed on an intentionally vulnerable demo application for educational and ethical testing purposes.
+
+OBJECTIVES:
+
+Identify security vulnerabilities in a web application.
+
+Understand common web security risks.
+
+Document findings and recommend mitigation strategies.
+
+TESTED APPLICATION:
+
+Altoro Mutual
+URL: https://demo.testfire.net/
+
+TESTING TYPE:
+
+Manual Security Testing
+
+TOOLS USED:
+
+Web Browser (Google Chrome)
+
+Visual Studio Code (for documentation)
+
+VULNERABILITY DETAILS
+1. SQL INJECTION
+
+Description:
+SQL Injection attack was tested on the login page by entering a malicious SQL payload in the username field.
+
+Test Payload Used:
+
+' OR 1=1 --
+
+Testing Steps:
+
+Navigate to login page.
+
+Enter the payload in username field.
+
+Enter random password.
+
+Click Login.
+
+Expected Result:
+Application should reject invalid login credentials.
+
+Actual Result:
+The application allowed login without valid credentials and bypassed authentication.
+
+Risk Level: High
+
+Impact:
+An attacker can gain unauthorized access to sensitive account information.
+
+Status: Vulnerable
+
+2. CROSS-SITE SCRIPTING (XSS)
+
+Description:
+XSS vulnerability was tested by injecting a JavaScript payload into an input field.
+
+Test Payload Used:
+
+<script>alert('XSS')</script>
+
+Testing Steps:
+
+Navigate to input field (search or form).
+
+Enter the payload.
+
+Submit the request.
+
+Expected Result:
+Application should not execute the script.
+
+Actual Result:
+An alert popup appeared, indicating script execution.
+
+Risk Level: Medium
+
+Impact:
+An attacker can execute malicious scripts in the user’s browser and steal session data.
+
+Status: Vulnerable
+
+RECOMMENDATIONS:
+
+Use parameterized queries to prevent SQL Injection.
+
+Implement proper input validation and sanitization.
+
+Apply output encoding to prevent XSS.
+
+Implement secure coding practices.
+
+CONCLUSION:
+
+The tested web application was found vulnerable to SQL Injection and Cross-Site Scripting (XSS). These vulnerabilities can lead to serious security risks such as unauthorized access and execution of malicious scripts. Proper security controls must be implemented to mitigate these issues.
